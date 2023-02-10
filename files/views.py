@@ -63,11 +63,11 @@ def view(request):
 
 
         
-        context = {"list": list_dicts}
+        # context = {"list": list_dicts}
         
         print(list_dicts)
         
     finally:
         file.close()
 
-    return HttpResponse(template.render(context, request))
+    return render(request, 'view.html', {"list": list_dicts})

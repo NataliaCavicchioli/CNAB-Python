@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,12 +14,12 @@
       crossorigin="anonymous"
     />
     <!-- Add additional CSS in static file -->
-    {% load static %}
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
     <div class="container-fluid">
-      <div class="box-content">
+      <div class="container-view">
         <h2>CNAB Reader</h2>
         {% block content %}{% endblock %}
       </div>

@@ -1,19 +1,21 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Aqui vai a visualização dos dados do arquivo -->
 
-<ul>
+<ul class="box-content">
   {% for dict in list %}
-  <li>Type: {{ dict.type }}</li>
-  <li>Date: {{ dict.date }}</li>
-  <li>Value: {{ dict.value }}</li>
-  <li>CPF: {{ dict.cpf }}</li>
-  <li>Card: {{ dict.card }}</li>
-  <li>Hour: {{ dict.hour }}</li>
-  <li>Store_owner: { dict.store_owner }}</li>
-  <li>Store_name: {{ dict.store_name }}</li>
+  <div>
+    <li>Type: {{ dict.type }}</li>
+    <li>Date: {{ dict.date }}</li>
+    <li>Value: {{ dict.value }}</li>
+    <li>CPF: {{ dict.cpf }}</li>
+    <li>Card: {{ dict.card }}</li>
+    <li>Hour: {{ dict.hour }}</li>
+    <li>Store_owner: {{ dict.store_owner }}</li>
+    <li>Store_name: {{ dict.store_name|linebreaksbr }}</li>
+  </div>
 
   {% empty %}
-  <li>Sorry, no athletes in this list.</li>
+  <li>Sorry, no information in this list.</li>
   {% endfor %}
 </ul>
 
