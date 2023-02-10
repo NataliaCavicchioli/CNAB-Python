@@ -26,3 +26,11 @@ pip install -r requirements.txt
 Para rodar o servidor:
 
 python manage.py runserver
+
+Uma vez com o servidor rodando, para acessar digite no seu browser:
+
+http://localhost:8000/api/files/
+
+Faça o upload do arquivo CNAB, e clique em "view data".
+
+Pronto, as informações do seu arquivo serão renderizadas.
