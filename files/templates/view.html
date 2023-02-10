@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Aqui vai a visualização dos dados do arquivo -->
+
+<ul>
+  {% for dict in list %}
+  <li>Type: {{ dict.type }}</li>
+  <li>Date: {{ dict.date }}</li>
+  <li>Value: {{ dict.value }}</li>
+  <li>CPF: {{ dict.cpf }}</li>
+  <li>Card: {{ dict.card }}</li>
+  <li>Hour: {{ dict.hour }}</li>
+  <li>Store_owner: { dict.store_owner }}</li>
+  <li>Store_name: {{ dict.store_name }}</li>
+
+  {% empty %}
+  <li>Sorry, no athletes in this list.</li>
+  {% endfor %}
+</ul>
+
+{% if uploaded_file_url %}
+<p>
+  File uploaded at:
+  <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a>
+</p>
+{% endif %}
+
+<p><a href="{% url 'upload' %}">Upload More</a></p>
+
+<p><a href="{% url 'home' %}">Return to home</a></p>
+{% endblock %}
